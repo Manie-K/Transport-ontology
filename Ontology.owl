@@ -16,6 +16,181 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <owl:Ontology rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#dostarczana_w -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#dostarczana_w">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Dostawa"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Paleta"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#jest_przydzielony -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#jest_przydzielony">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Dostawa"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Pojazd"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#podpisany_z -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#podpisany_z">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Klient"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Kontrakt"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#prowadzi -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#prowadzi">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Kierowca"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Pojazd"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#zawarta_w -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#zawarta_w">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Dostawa"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Kontrakt"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Dostawa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Dostawa"/>
+    
+
+
+    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#DostawaKrajowa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#DostawaKrajowa">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Dostawa"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#DostawaMiedzynarodowa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#DostawaMiedzynarodowa">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Dostawa"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Dostawczak -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Dostawczak">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Pojazd"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Kierowca -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Kierowca"/>
+    
+
+
+    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Klient -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Klient"/>
+    
+
+
+    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Kontrakt -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Kontrakt"/>
+    
+
+
+    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#KontraktDlugoterminowy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#KontraktDlugoterminowy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Kontrakt"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#KontraktKrotkoterminowy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#KontraktKrotkoterminowy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Kontrakt"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Paleta -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Paleta"/>
+    
+
+
+    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#PaletaChemiczna -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#PaletaChemiczna">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Paleta"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#PaletaChlodnicza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#PaletaChlodnicza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Paleta"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#PaletaPrzemyslowa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#PaletaPrzemyslowa">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Paleta"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Pojazd -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Pojazd"/>
+    
+
+
+    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Tir -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Tir">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Pojazd"/>
+    </owl:Class>
 </rdf:RDF>
 
 
