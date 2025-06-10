@@ -189,15 +189,6 @@
         </ObjectSomeValuesFrom>
     </EquivalentClasses>
     <EquivalentClasses>
-        <Class IRI="#Klient"/>
-        <ObjectSomeValuesFrom>
-            <ObjectInverseOf>
-                <ObjectProperty IRI="#podpisany_z"/>
-            </ObjectInverseOf>
-            <Class abbreviatedIRI="owl:Thing"/>
-        </ObjectSomeValuesFrom>
-    </EquivalentClasses>
-    <EquivalentClasses>
         <Class IRI="#Kontrakt"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#podpisany_z"/>

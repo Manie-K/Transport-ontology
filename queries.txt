@@ -1,0 +1,23 @@
+1. Czy każda dostawa musi dotyczyć jakiegoś kontraktu?
+
+Dostawa and not (zawarta_w some Kontrakt)
+
+TAK
+
+2. Czy każdy klient musi mieć podpisany jakiś kontrakt? 
+
+Klient and not (inverse podpisany_z some Kontrakt)
+
+NIE
+
+3. Czy może istnieć duża dostawa nie dostarczana tirem?
+
+DuzaDostawa and not (inverse przydzielony_do some Tir)
+
+TAK
+
+4. Czy paleta przemysłowa może być w dostawie wykonywanej przez chłodnie?
+
+PaletaPrzemyslowa and (inverse dostarczana_w some (inverse przydzielony_do some Chlodnia))
+
+NIE
