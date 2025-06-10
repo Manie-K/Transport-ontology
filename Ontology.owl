@@ -22,19 +22,13 @@
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Declaration>
+        <Class IRI="#Chlodnia"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Dostawa"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#DostawaKrajowa"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#DostawaMiedzynarodowa"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Dostawczak"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#DużaDostawa"/>
+        <Class IRI="#DuzaDostawa"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Kierowca"/>
@@ -46,16 +40,10 @@
         <Class IRI="#Kontrakt"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#KontraktDlugoterminowy"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#KontraktKrotkoterminowy"/>
+        <Class IRI="#KontraktPremium"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Paleta"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#PaletaChemiczna"/>
     </Declaration>
     <Declaration>
         <Class IRI="#PaletaChlodnicza"/>
@@ -85,16 +73,34 @@
         <ObjectProperty IRI="#zawarta_w"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#DostawaDoOlsztyna"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#allegro"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#amazon"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#chlodniaFrostaOlsztyn"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#dostawaDoBerlina"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#dostawaDoGdanska"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#dostawaDoKrakowa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#dostawaDoLodzi"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#dostawaDoWarszawy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#dostawaDoWroclawia"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#dostawczakAllegroKrakow"/>
@@ -103,10 +109,16 @@
         <NamedIndividual IRI="#franek"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#frosta"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#kontraktAllegro"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#kontraktAmazon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#kontraktFrosta"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#maciej"/>
@@ -118,10 +130,22 @@
         <NamedIndividual IRI="#paletaFilmyAmazon"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#paletaGotoweDania"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#paletaGryAllegro"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#paletaKsiazkiAllegro"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#paletaKsiazkiAmazon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#paletaRyby"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#paletaWarzywa"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#paletaZabawkiAllegro"/>
@@ -130,6 +154,18 @@
         <NamedIndividual IRI="#tirAmazonBerlin"/>
     </Declaration>
     <EquivalentClasses>
+        <Class IRI="#Chlodnia"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#przydzielony_do"/>
+            <ObjectSomeValuesFrom>
+                <ObjectInverseOf>
+                    <ObjectProperty IRI="#dostarczana_w"/>
+                </ObjectInverseOf>
+                <Class IRI="#PaletaChlodnicza"/>
+            </ObjectSomeValuesFrom>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#Dostawa"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#zawarta_w"/>
@@ -137,8 +173,8 @@
         </ObjectSomeValuesFrom>
     </EquivalentClasses>
     <EquivalentClasses>
-        <Class IRI="#DużaDostawa"/>
-        <ObjectMinCardinality cardinality="3">
+        <Class IRI="#DuzaDostawa"/>
+        <ObjectMinCardinality cardinality="4">
             <ObjectInverseOf>
                 <ObjectProperty IRI="#dostarczana_w"/>
             </ObjectInverseOf>
@@ -169,6 +205,15 @@
         </ObjectSomeValuesFrom>
     </EquivalentClasses>
     <EquivalentClasses>
+        <Class IRI="#KontraktPremium"/>
+        <ObjectMinCardinality cardinality="5">
+            <ObjectInverseOf>
+                <ObjectProperty IRI="#zawarta_w"/>
+            </ObjectInverseOf>
+            <Class IRI="#Dostawa"/>
+        </ObjectMinCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#Paleta"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#dostarczana_w"/>
@@ -182,33 +227,29 @@
             <Class IRI="#Dostawa"/>
         </ObjectSomeValuesFrom>
     </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Tir"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#przydzielony_do"/>
+            <ObjectMinCardinality cardinality="3">
+                <ObjectInverseOf>
+                    <ObjectProperty IRI="#dostarczana_w"/>
+                </ObjectInverseOf>
+                <Class IRI="#Paleta"/>
+            </ObjectMinCardinality>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
     <SubClassOf>
-        <Class IRI="#DostawaKrajowa"/>
-        <Class IRI="#Dostawa"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#DostawaMiedzynarodowa"/>
-        <Class IRI="#Dostawa"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Dostawczak"/>
+        <Class IRI="#Chlodnia"/>
         <Class IRI="#Pojazd"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#DużaDostawa"/>
+        <Class IRI="#DuzaDostawa"/>
         <Class IRI="#Dostawa"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#KontraktDlugoterminowy"/>
+        <Class IRI="#KontraktPremium"/>
         <Class IRI="#Kontrakt"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#KontraktKrotkoterminowy"/>
-        <Class IRI="#Kontrakt"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#PaletaChemiczna"/>
-        <Class IRI="#Paleta"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#PaletaChlodnicza"/>
@@ -243,14 +284,6 @@
         <Class IRI="#Pojazd"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#DostawaKrajowa"/>
-        <Class IRI="#DostawaMiedzynarodowa"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Dostawczak"/>
-        <Class IRI="#Tir"/>
-    </DisjointClasses>
-    <DisjointClasses>
         <Class IRI="#Kierowca"/>
         <Class IRI="#Klient"/>
     </DisjointClasses>
@@ -287,28 +320,184 @@
         <Class IRI="#Pojazd"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#KontraktDlugoterminowy"/>
-        <Class IRI="#KontraktKrotkoterminowy"/>
-    </DisjointClasses>
-    <DisjointClasses>
         <Class IRI="#Paleta"/>
         <Class IRI="#Pojazd"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#PaletaChemiczna"/>
-        <Class IRI="#PaletaChlodnicza"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#PaletaChemiczna"/>
-        <Class IRI="#PaletaPrzemyslowa"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#PaletaChlodnicza"/>
         <Class IRI="#PaletaPrzemyslowa"/>
     </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#PaletaPrzemyslowa"/>
+        <NamedIndividual IRI="#paletaFilmyAllegro"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PaletaPrzemyslowa"/>
+        <NamedIndividual IRI="#paletaFilmyAmazon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PaletaChlodnicza"/>
+        <NamedIndividual IRI="#paletaGotoweDania"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PaletaPrzemyslowa"/>
+        <NamedIndividual IRI="#paletaGryAllegro"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PaletaPrzemyslowa"/>
+        <NamedIndividual IRI="#paletaKsiazkiAllegro"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PaletaPrzemyslowa"/>
+        <NamedIndividual IRI="#paletaKsiazkiAmazon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PaletaChlodnicza"/>
+        <NamedIndividual IRI="#paletaRyby"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PaletaChlodnicza"/>
+        <NamedIndividual IRI="#paletaWarzywa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PaletaPrzemyslowa"/>
+        <NamedIndividual IRI="#paletaZabawkiAllegro"/>
+    </ClassAssertion>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#DostawaDoOlsztyna"/>
+        <NamedIndividual IRI="#dostawaDoBerlina"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#DostawaDoOlsztyna"/>
+        <NamedIndividual IRI="#dostawaDoGdanska"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#DostawaDoOlsztyna"/>
+        <NamedIndividual IRI="#dostawaDoKrakowa"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#DostawaDoOlsztyna"/>
+        <NamedIndividual IRI="#dostawaDoLodzi"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#DostawaDoOlsztyna"/>
+        <NamedIndividual IRI="#dostawaDoWarszawy"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#DostawaDoOlsztyna"/>
+        <NamedIndividual IRI="#dostawaDoWroclawia"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#allegro"/>
+        <NamedIndividual IRI="#amazon"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#allegro"/>
+        <NamedIndividual IRI="#frosta"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#amazon"/>
+        <NamedIndividual IRI="#frosta"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#chlodniaFrostaOlsztyn"/>
+        <NamedIndividual IRI="#dostawczakAllegroKrakow"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#chlodniaFrostaOlsztyn"/>
+        <NamedIndividual IRI="#tirAmazonBerlin"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#dostawaDoBerlina"/>
+        <NamedIndividual IRI="#dostawaDoGdanska"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#dostawaDoBerlina"/>
+        <NamedIndividual IRI="#dostawaDoKrakowa"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#dostawaDoBerlina"/>
+        <NamedIndividual IRI="#dostawaDoLodzi"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#dostawaDoBerlina"/>
+        <NamedIndividual IRI="#dostawaDoWarszawy"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#dostawaDoBerlina"/>
+        <NamedIndividual IRI="#dostawaDoWroclawia"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#dostawaDoGdanska"/>
+        <NamedIndividual IRI="#dostawaDoKrakowa"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#dostawaDoGdanska"/>
+        <NamedIndividual IRI="#dostawaDoLodzi"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#dostawaDoGdanska"/>
+        <NamedIndividual IRI="#dostawaDoWarszawy"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#dostawaDoGdanska"/>
+        <NamedIndividual IRI="#dostawaDoWroclawia"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#dostawaDoKrakowa"/>
+        <NamedIndividual IRI="#dostawaDoLodzi"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#dostawaDoKrakowa"/>
+        <NamedIndividual IRI="#dostawaDoWarszawy"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#dostawaDoKrakowa"/>
+        <NamedIndividual IRI="#dostawaDoWroclawia"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#dostawaDoLodzi"/>
+        <NamedIndividual IRI="#dostawaDoWarszawy"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#dostawaDoLodzi"/>
+        <NamedIndividual IRI="#dostawaDoWroclawia"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#dostawaDoWarszawy"/>
+        <NamedIndividual IRI="#dostawaDoWroclawia"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#dostawczakAllegroKrakow"/>
+        <NamedIndividual IRI="#tirAmazonBerlin"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#franek"/>
+        <NamedIndividual IRI="#maciej"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#kontraktAllegro"/>
+        <NamedIndividual IRI="#kontraktAmazon"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#kontraktAllegro"/>
+        <NamedIndividual IRI="#kontraktFrosta"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#kontraktAmazon"/>
+        <NamedIndividual IRI="#kontraktFrosta"/>
+    </DifferentIndividuals>
     <DifferentIndividuals>
         <NamedIndividual IRI="#paletaFilmyAllegro"/>
         <NamedIndividual IRI="#paletaFilmyAmazon"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaFilmyAllegro"/>
+        <NamedIndividual IRI="#paletaGotoweDania"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaFilmyAllegro"/>
+        <NamedIndividual IRI="#paletaGryAllegro"/>
     </DifferentIndividuals>
     <DifferentIndividuals>
         <NamedIndividual IRI="#paletaFilmyAllegro"/>
@@ -319,6 +508,26 @@
         <NamedIndividual IRI="#paletaKsiazkiAmazon"/>
     </DifferentIndividuals>
     <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaFilmyAllegro"/>
+        <NamedIndividual IRI="#paletaRyby"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaFilmyAllegro"/>
+        <NamedIndividual IRI="#paletaWarzywa"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaFilmyAllegro"/>
+        <NamedIndividual IRI="#paletaZabawkiAllegro"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaFilmyAmazon"/>
+        <NamedIndividual IRI="#paletaGotoweDania"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaFilmyAmazon"/>
+        <NamedIndividual IRI="#paletaGryAllegro"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
         <NamedIndividual IRI="#paletaFilmyAmazon"/>
         <NamedIndividual IRI="#paletaKsiazkiAllegro"/>
     </DifferentIndividuals>
@@ -327,12 +536,119 @@
         <NamedIndividual IRI="#paletaKsiazkiAmazon"/>
     </DifferentIndividuals>
     <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaFilmyAmazon"/>
+        <NamedIndividual IRI="#paletaRyby"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaFilmyAmazon"/>
+        <NamedIndividual IRI="#paletaWarzywa"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaFilmyAmazon"/>
+        <NamedIndividual IRI="#paletaZabawkiAllegro"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaGotoweDania"/>
+        <NamedIndividual IRI="#paletaGryAllegro"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaGotoweDania"/>
+        <NamedIndividual IRI="#paletaKsiazkiAllegro"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaGotoweDania"/>
+        <NamedIndividual IRI="#paletaKsiazkiAmazon"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaGotoweDania"/>
+        <NamedIndividual IRI="#paletaRyby"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaGotoweDania"/>
+        <NamedIndividual IRI="#paletaWarzywa"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaGotoweDania"/>
+        <NamedIndividual IRI="#paletaZabawkiAllegro"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaGryAllegro"/>
+        <NamedIndividual IRI="#paletaKsiazkiAllegro"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaGryAllegro"/>
+        <NamedIndividual IRI="#paletaKsiazkiAmazon"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaGryAllegro"/>
+        <NamedIndividual IRI="#paletaRyby"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaGryAllegro"/>
+        <NamedIndividual IRI="#paletaWarzywa"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaGryAllegro"/>
+        <NamedIndividual IRI="#paletaZabawkiAllegro"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
         <NamedIndividual IRI="#paletaKsiazkiAllegro"/>
         <NamedIndividual IRI="#paletaKsiazkiAmazon"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaKsiazkiAllegro"/>
+        <NamedIndividual IRI="#paletaRyby"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaKsiazkiAllegro"/>
+        <NamedIndividual IRI="#paletaWarzywa"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaKsiazkiAllegro"/>
+        <NamedIndividual IRI="#paletaZabawkiAllegro"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaKsiazkiAmazon"/>
+        <NamedIndividual IRI="#paletaRyby"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaKsiazkiAmazon"/>
+        <NamedIndividual IRI="#paletaWarzywa"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaKsiazkiAmazon"/>
+        <NamedIndividual IRI="#paletaZabawkiAllegro"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaRyby"/>
+        <NamedIndividual IRI="#paletaWarzywa"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaRyby"/>
+        <NamedIndividual IRI="#paletaZabawkiAllegro"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaWarzywa"/>
+        <NamedIndividual IRI="#paletaZabawkiAllegro"/>
     </DifferentIndividuals>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#zawarta_w"/>
+        <NamedIndividual IRI="#DostawaDoOlsztyna"/>
+        <NamedIndividual IRI="#kontraktAmazon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#przydzielony_do"/>
+        <NamedIndividual IRI="#chlodniaFrostaOlsztyn"/>
+        <NamedIndividual IRI="#DostawaDoOlsztyna"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#zawarta_w"/>
         <NamedIndividual IRI="#dostawaDoBerlina"/>
+        <NamedIndividual IRI="#kontraktAmazon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#zawarta_w"/>
+        <NamedIndividual IRI="#dostawaDoGdanska"/>
         <NamedIndividual IRI="#kontraktAmazon"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
@@ -341,9 +657,24 @@
         <NamedIndividual IRI="#kontraktAllegro"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#zawarta_w"/>
+        <NamedIndividual IRI="#dostawaDoLodzi"/>
+        <NamedIndividual IRI="#kontraktAmazon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#zawarta_w"/>
+        <NamedIndividual IRI="#dostawaDoWarszawy"/>
+        <NamedIndividual IRI="#kontraktAmazon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#zawarta_w"/>
+        <NamedIndividual IRI="#dostawaDoWroclawia"/>
+        <NamedIndividual IRI="#kontraktAmazon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#przydzielony_do"/>
         <NamedIndividual IRI="#dostawczakAllegroKrakow"/>
-        <NamedIndividual IRI="#dostawaDoKrakowa"/>
+        <NamedIndividual IRI="#dostawaDoBerlina"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#prowadzi"/>
@@ -359,6 +690,11 @@
         <ObjectProperty IRI="#podpisany_z"/>
         <NamedIndividual IRI="#kontraktAmazon"/>
         <NamedIndividual IRI="#amazon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#podpisany_z"/>
+        <NamedIndividual IRI="#kontraktFrosta"/>
+        <NamedIndividual IRI="#frosta"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#prowadzi"/>
@@ -377,6 +713,16 @@
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#dostarczana_w"/>
+        <NamedIndividual IRI="#paletaGotoweDania"/>
+        <NamedIndividual IRI="#DostawaDoOlsztyna"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#dostarczana_w"/>
+        <NamedIndividual IRI="#paletaGryAllegro"/>
+        <NamedIndividual IRI="#dostawaDoKrakowa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#dostarczana_w"/>
         <NamedIndividual IRI="#paletaKsiazkiAllegro"/>
         <NamedIndividual IRI="#dostawaDoKrakowa"/>
     </ObjectPropertyAssertion>
@@ -387,13 +733,23 @@
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#dostarczana_w"/>
+        <NamedIndividual IRI="#paletaRyby"/>
+        <NamedIndividual IRI="#DostawaDoOlsztyna"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#dostarczana_w"/>
+        <NamedIndividual IRI="#paletaWarzywa"/>
+        <NamedIndividual IRI="#DostawaDoOlsztyna"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#dostarczana_w"/>
         <NamedIndividual IRI="#paletaZabawkiAllegro"/>
         <NamedIndividual IRI="#dostawaDoKrakowa"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#przydzielony_do"/>
         <NamedIndividual IRI="#tirAmazonBerlin"/>
-        <NamedIndividual IRI="#dostawaDoBerlina"/>
+        <NamedIndividual IRI="#dostawaDoKrakowa"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#dostarczana_w"/>
