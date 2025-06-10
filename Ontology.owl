@@ -1,197 +1,441 @@
 <?xml version="1.0"?>
 
 
-<!DOCTYPE rdf:RDF [
-    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+<!DOCTYPE Ontology [
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 ]>
 
 
-<rdf:RDF xmlns="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#"
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
      xml:base="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#dostarczana_w -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#dostarczana_w">
-        <rdfs:range rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Dostawa"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Paleta"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#jest_przydzielony -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#jest_przydzielony">
-        <rdfs:range rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Dostawa"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Pojazd"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#podpisany_z -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#podpisany_z">
-        <rdfs:range rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Klient"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Kontrakt"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#prowadzi -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#prowadzi">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Kierowca"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Pojazd"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#zawarta_w -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#zawarta_w">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Dostawa"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Kontrakt"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Dostawa -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Dostawa"/>
-    
-
-
-    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#DostawaKrajowa -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#DostawaKrajowa">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Dostawa"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#DostawaMiedzynarodowa -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#DostawaMiedzynarodowa">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Dostawa"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Dostawczak -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Dostawczak">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Pojazd"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Kierowca -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Kierowca"/>
-    
-
-
-    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Klient -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Klient"/>
-    
-
-
-    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Kontrakt -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Kontrakt"/>
-    
-
-
-    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#KontraktDlugoterminowy -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#KontraktDlugoterminowy">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Kontrakt"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#KontraktKrotkoterminowy -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#KontraktKrotkoterminowy">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Kontrakt"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Paleta -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Paleta"/>
-    
-
-
-    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#PaletaChemiczna -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#PaletaChemiczna">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Paleta"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#PaletaChlodnicza -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#PaletaChlodnicza">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Paleta"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#PaletaPrzemyslowa -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#PaletaPrzemyslowa">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Paleta"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Pojazd -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Pojazd"/>
-    
-
-
-    <!-- http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Tir -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Tir">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#Pojazd"/>
-    </owl:Class>
-</rdf:RDF>
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13">
+    <Prefix name="" IRI="http://www.semanticweb.org/maciek/ontologies/2025/4/untitled-ontology-13#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Dostawa"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DostawaKrajowa"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DostawaMiedzynarodowa"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Dostawczak"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DużaDostawa"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Kierowca"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Klient"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Kontrakt"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#KontraktDlugoterminowy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#KontraktKrotkoterminowy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Paleta"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PaletaChemiczna"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PaletaChlodnicza"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PaletaPrzemyslowa"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pojazd"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tir"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#dostarczana_w"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#podpisany_z"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#prowadzi"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#przydzielony_do"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#zawarta_w"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#allegro"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#amazon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#dostawaDoBerlina"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#dostawaDoKrakowa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#dostawczakAllegroKrakow"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#franek"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#kontraktAllegro"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#kontraktAmazon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#maciej"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#paletaFilmyAllegro"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#paletaFilmyAmazon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#paletaKsiazkiAllegro"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#paletaKsiazkiAmazon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#paletaZabawkiAllegro"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#tirAmazonBerlin"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Dostawa"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#zawarta_w"/>
+            <Class IRI="#Kontrakt"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#DużaDostawa"/>
+        <ObjectMinCardinality cardinality="3">
+            <ObjectInverseOf>
+                <ObjectProperty IRI="#dostarczana_w"/>
+            </ObjectInverseOf>
+            <Class IRI="#Paleta"/>
+        </ObjectMinCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Kierowca"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#prowadzi"/>
+            <Class IRI="#Pojazd"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Klient"/>
+        <ObjectSomeValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty IRI="#podpisany_z"/>
+            </ObjectInverseOf>
+            <Class abbreviatedIRI="owl:Thing"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Kontrakt"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#podpisany_z"/>
+            <Class IRI="#Klient"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Paleta"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#dostarczana_w"/>
+            <Class IRI="#Dostawa"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Pojazd"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#przydzielony_do"/>
+            <Class IRI="#Dostawa"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#DostawaKrajowa"/>
+        <Class IRI="#Dostawa"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DostawaMiedzynarodowa"/>
+        <Class IRI="#Dostawa"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dostawczak"/>
+        <Class IRI="#Pojazd"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DużaDostawa"/>
+        <Class IRI="#Dostawa"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#KontraktDlugoterminowy"/>
+        <Class IRI="#Kontrakt"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#KontraktKrotkoterminowy"/>
+        <Class IRI="#Kontrakt"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PaletaChemiczna"/>
+        <Class IRI="#Paleta"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PaletaChlodnicza"/>
+        <Class IRI="#Paleta"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PaletaPrzemyslowa"/>
+        <Class IRI="#Paleta"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tir"/>
+        <Class IRI="#Pojazd"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Dostawa"/>
+        <Class IRI="#Kierowca"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Dostawa"/>
+        <Class IRI="#Klient"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Dostawa"/>
+        <Class IRI="#Kontrakt"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Dostawa"/>
+        <Class IRI="#Paleta"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Dostawa"/>
+        <Class IRI="#Pojazd"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DostawaKrajowa"/>
+        <Class IRI="#DostawaMiedzynarodowa"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Dostawczak"/>
+        <Class IRI="#Tir"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Kierowca"/>
+        <Class IRI="#Klient"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Kierowca"/>
+        <Class IRI="#Kontrakt"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Kierowca"/>
+        <Class IRI="#Paleta"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Kierowca"/>
+        <Class IRI="#Pojazd"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Klient"/>
+        <Class IRI="#Kontrakt"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Klient"/>
+        <Class IRI="#Paleta"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Klient"/>
+        <Class IRI="#Pojazd"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Kontrakt"/>
+        <Class IRI="#Paleta"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Kontrakt"/>
+        <Class IRI="#Pojazd"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#KontraktDlugoterminowy"/>
+        <Class IRI="#KontraktKrotkoterminowy"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Paleta"/>
+        <Class IRI="#Pojazd"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#PaletaChemiczna"/>
+        <Class IRI="#PaletaChlodnicza"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#PaletaChemiczna"/>
+        <Class IRI="#PaletaPrzemyslowa"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#PaletaChlodnicza"/>
+        <Class IRI="#PaletaPrzemyslowa"/>
+    </DisjointClasses>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaFilmyAllegro"/>
+        <NamedIndividual IRI="#paletaFilmyAmazon"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaFilmyAllegro"/>
+        <NamedIndividual IRI="#paletaKsiazkiAllegro"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaFilmyAllegro"/>
+        <NamedIndividual IRI="#paletaKsiazkiAmazon"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaFilmyAmazon"/>
+        <NamedIndividual IRI="#paletaKsiazkiAllegro"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaFilmyAmazon"/>
+        <NamedIndividual IRI="#paletaKsiazkiAmazon"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#paletaKsiazkiAllegro"/>
+        <NamedIndividual IRI="#paletaKsiazkiAmazon"/>
+    </DifferentIndividuals>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#zawarta_w"/>
+        <NamedIndividual IRI="#dostawaDoBerlina"/>
+        <NamedIndividual IRI="#kontraktAmazon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#zawarta_w"/>
+        <NamedIndividual IRI="#dostawaDoKrakowa"/>
+        <NamedIndividual IRI="#kontraktAllegro"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#przydzielony_do"/>
+        <NamedIndividual IRI="#dostawczakAllegroKrakow"/>
+        <NamedIndividual IRI="#dostawaDoKrakowa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#prowadzi"/>
+        <NamedIndividual IRI="#franek"/>
+        <NamedIndividual IRI="#tirAmazonBerlin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#podpisany_z"/>
+        <NamedIndividual IRI="#kontraktAllegro"/>
+        <NamedIndividual IRI="#allegro"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#podpisany_z"/>
+        <NamedIndividual IRI="#kontraktAmazon"/>
+        <NamedIndividual IRI="#amazon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#prowadzi"/>
+        <NamedIndividual IRI="#maciej"/>
+        <NamedIndividual IRI="#dostawczakAllegroKrakow"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#dostarczana_w"/>
+        <NamedIndividual IRI="#paletaFilmyAllegro"/>
+        <NamedIndividual IRI="#dostawaDoKrakowa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#dostarczana_w"/>
+        <NamedIndividual IRI="#paletaFilmyAmazon"/>
+        <NamedIndividual IRI="#dostawaDoBerlina"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#dostarczana_w"/>
+        <NamedIndividual IRI="#paletaKsiazkiAllegro"/>
+        <NamedIndividual IRI="#dostawaDoKrakowa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#dostarczana_w"/>
+        <NamedIndividual IRI="#paletaKsiazkiAmazon"/>
+        <NamedIndividual IRI="#dostawaDoBerlina"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#dostarczana_w"/>
+        <NamedIndividual IRI="#paletaZabawkiAllegro"/>
+        <NamedIndividual IRI="#dostawaDoKrakowa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#przydzielony_do"/>
+        <NamedIndividual IRI="#tirAmazonBerlin"/>
+        <NamedIndividual IRI="#dostawaDoBerlina"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#dostarczana_w"/>
+        <Class IRI="#Paleta"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#podpisany_z"/>
+        <Class IRI="#Kontrakt"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#prowadzi"/>
+        <Class IRI="#Kierowca"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#przydzielony_do"/>
+        <Class IRI="#Pojazd"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#zawarta_w"/>
+        <Class IRI="#Dostawa"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#dostarczana_w"/>
+        <Class IRI="#Dostawa"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#podpisany_z"/>
+        <Class IRI="#Klient"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#prowadzi"/>
+        <Class IRI="#Pojazd"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#przydzielony_do"/>
+        <Class IRI="#Dostawa"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#zawarta_w"/>
+        <Class IRI="#Kontrakt"/>
+    </ObjectPropertyRange>
+</Ontology>
 
 
 
